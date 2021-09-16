@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>sample web page</title>
+	<h1 align="center"style="color: royalblue;";>REGISTRATION FORM</h1><br>
+	<style>
+	  body{
+	  	background-image: url("https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510__480.jpg");
+	  	background-size: cover;
+	  }
+		strong , button{
+			font-size: 20px;
+			color: limegreen;
+		}
+	</style>
+	<script>
+		function validate(){
+			event.preventDefault()
+			var Firstname=document.getElementById("Firstname");
+			var Lastname=document.getElementById("Lastname");
+			var email=document.getElementById("Email");
+			var Mobile=document.getElementById("phone");
+			var DOB=document.getElementById("DOB");
+			var Gender=document.getElementById("Gender");
+			if(Firstname.value==''||Lastname.value==''||email.value==''||Mobile.value==''||DOB.value==''||Gender.value==''){
+				alert("All fields is required");
+				return false;
+			}
+			console.log(Firstname.id,":",Firstname.value);
+			console.log(Lastname.id,":",Lastname.value);
+			console.log(email.id,":",email.value);
+			console.log(Mobile.id,":",Mobile.value);
+			console.log(DOB.id,":",DOB.value);
+			console.log(Gender.id,":",Gender.value);
+		}
+		function reset(){
+			if(Firstname.value==''||Lastname.value==''||email.value==''||Mobile.value==''||DOB.value==''||Gender.value==''){
+				return console.clear();
+			}
+		}
+		
+	</script>
+</head>
+<body>
+	<form align="center" id="form">
+		<label for="First name">
+			<strong>First name:</strong>
+			<input type="text" id="Firstname" name="Firstname" placeholder="First name" required><br><br>
+		</label>
+		<label for="Last name">
+			<strong>Last name:</strong>
+			<input type="text" id="Lastname" name="Lastname" placeholder="Last name" required><br><br>
+		</label>
+		<label for="Email">
+			<strong>Email-id:</strong>
+			<input type="Email" id="Email" name="Email" placeholder="Email-id" required><br><br>
+		</label>
+		<label for="Mobile number">
+			<strong>Mobile number:</strong>
+			<input type="tel" id="phone" name="phone" placeholder="Mobile number in numbers"required><br><br>
+		</label>
+		<label for="DOB" id="dob">
+			<strong>DOB:</strong>
+			<input type="text" id="DOB" name="DOB" placeholder="DD/MM/YYYY"required><br><br>
+		</label>
+		<label for="Gender">
+			<strong>Gender:</strong>
+			<select id="Gender">
+				<option>Male</option>
+				<option selected>Female</option>
+			</select><br><br>
+		</label>
+		<button id="register" name="register" type="register" onclick="return validate()">register</button>
+		<button name="clear" type="reset" onclick="return reset">clear</button>
+		<button name="reset" type="clear" onclick="return clear">reset</button>
+</body>
+</html>
